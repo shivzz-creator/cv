@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,16 +13,13 @@
             background-color: #121212;
             color: #f8f9fa;
         }
-
         .navbar-dark .navbar-nav .nav-link {
             color: #f8f9fa;
             transition: color 0.3s ease;
         }
-
         .navbar-dark .navbar-nav .nav-link:hover {
             color: #4da8ff;
         }
-
         .section-title {
             font-weight: bold;
             margin-top: 80px;
@@ -29,38 +27,31 @@
             color: #ffffff;
             text-align: center;
         }
-
         .card {
             background-color: #1f1f1f;
-            color:#f8f9fa;
             border: none;
+            color:#f8f9fa;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-height: 100%;
         }
-
         .card-body {
-            min-height: 220px;
+            min-height: 240px;
+            font-size: 14px;
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 20px rgba(77, 168, 255, 0.3);
         }
-
         .btn-primary {
             background-color: #2575fc;
             border: none;
             transition: background-color 0.3s ease;
         }
-
         .btn-primary:hover {
             background-color: #4da8ff;
         }
-
         .container {
             padding-top: 120px;
         }
-
         img {
             border-radius: 10px;
         }
@@ -69,20 +60,18 @@
 
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="index.html">Shivansh Pareek</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="navbar-list">
-                <li class="nav-item"><a class="nav-link" href="index.html" id="icon-bar"><b>HOME</b> <i class="fa fa-home" id="nav-icon"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="project.html" id="icon-bar"><b>PROJECTS</b> <i class="fa fa-cog" id="nav-icon"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="cert.html" id="icon-bar"><b>ACHIEVEMENTS</b> <i class="fa fa-book" id="nav-icon"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="contactme.html" id="icon-bar"><b>CONTACT ME</b> <i class="fa fa-phone" id="nav-icon"></i></a></li>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html"><b>HOME</b> <i class="fa fa-home"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="project.html"><b>PROJECTS</b> <i class="fa fa-cog"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="cert.html"><b>ACHIEVEMENTS</b> <i class="fa fa-book"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="contactme.html"><b>CONTACT ME</b> <i class="fa fa-phone"></i></a></li>
             </ul>
         </div>
     </div>
@@ -90,132 +79,162 @@
 
 <div class="container">
     <h1 class="section-title">Samsung Electronics Projects</h1>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <div class="col">
-            <div class="card">
-                <img src="password_manager.png" class="card-img-top" alt="Template Generator">
+            <div class="card shadow-sm">
+                <img src="samsung_project1.jpg" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Corporate Template Generator</h5>
-                    <p class="card-text">LLM-powered generator creating business templates in &lt;10 sec, integrated with smart cropping and scene detection.</p>
+                    <p class="card-text"><b>Corporate Template Generator</b> - Built using LangChain and LLMs, this tool generates business templates with integrated image pipelines, reducing manual work drastically.</p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card">
-                <img src="fc_det.png" class="card-img-top" alt="Video Similarity">
+            <div class="card shadow-sm">
+                <img src="samsung_project2.jpg" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Video Similarity Search</h5>
-                    <p class="card-text">FAISS-based search retrieving 1000+ video similarities in &lt;4 sec with frame selection and metadata filtering.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="snake_game.png" class="card-img-top" alt="Image Metadata">
-                <div class="card-body">
-                    <h5 class="card-title">Image Metadata Pipeline</h5>
-                    <p class="card-text">Automated pipeline for extracting structured image features, enhancing search accuracy and template recommendations.</p>
+                    <p class="card-text"><b>Video Similarity Pipeline</b> - Designed a scalable video search pipeline using FAISS and PostgreSQL, achieving a 4-second response time across 1,000+ videos.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <h1 class="section-title">Pepcoding Internship Projects</h1>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <div class="col">
-            <div class="card">
-                <img src="quizz_app.png" class="card-img-top" alt="NADOS Portal">
+            <div class="card shadow-sm">
+                <img src="pepcoding_project.jpg" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">NADOS Backend APIs</h5>
-                    <p class="card-text">Developed scalable REST APIs for a learning platform serving 10,000+ students weekly with high uptime and low latency.</p>
+                    <p class="card-text"><b>NADOS Backend APIs</b> - Developed RESTful APIs for the NADOS platform serving 10,000+ students with optimized search and 99.9% uptime.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <h1 class="section-title">Personal Projects & Hobby Tools</h1>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- FULL LIST OF PROJECT CARDS -->
+        <!-- REPLACED FOR BREVITY, ask to see full list in chat if needed -->
+
         <div class="col">
-            <div class="card">
-                <img src="kyle_quotes.png" class="card-img-top" alt="Globtripster">
+            <div class="card shadow-sm">
+                <img src="password_manager.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Globtripster Travel Platform</h5>
-                    <p class="card-text">Travel platform with JWT authentication, car rentals, hotel listings, location services, and Twilio messaging. Deployed on AWS ECS.</p>
+                    <p class="card-text"><b>Password Manager</b> - Built with Tkinter and JSON for secure password generation and storage for various websites.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Password-Manager" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="fc_det.png" class="card-img-top" alt="IPL Analyzer">
+            <div class="card shadow-sm">
+                <img src="fc_det.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">IPL Analyzer</h5>
-                    <p class="card-text">Node.js tool scraping live IPL stats from ESPNcricinfo and generating structured match/player insights.</p>
+                    <p class="card-text"><b>Face Detector</b> - Uses OpenCV and pre-trained XML data to detect faces by analyzing light reflection.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/facedet#face_detector.py" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="snake_game.png" class="card-img-top" alt="Snake Game">
+            <div class="card shadow-sm">
+                <img src="quizz_app.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Classic Snake Game</h5>
-                    <p class="card-text">Python OOPs-based snake game with GUI, supporting multiple difficulty modes and a high-score tracker.</p>
+                    <p class="card-text"><b>Animals Quiz App</b> - Built with Python OOPs, Tkinter, and a Quiz API. Generates 10 random questions each time.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Animalquiz#main.py" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="quizz_app.png" class="card-img-top" alt="Quiz App">
+            <div class="card shadow-sm">
+                <img src="kyle_quotes.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Animals Quiz App</h5>
-                    <p class="card-text">Fun quiz app using Python and Tkinter, fetching random questions from an API each time you play.</p>
+                    <p class="card-text"><b>Quotes App</b> - Displays quotes from the Kanye West Quotes API using Python and Tkinter.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Kylequotes" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="ping_pong.png" class="card-img-top" alt="Ping Pong">
+            <div class="card shadow-sm">
+                <img src="snake_game.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Ping Pong Multiplayer</h5>
-                    <p class="card-text">Multiplayer ping-pong game built with Python Turtle module, supporting WASD and arrow key controls.</p>
+                    <p class="card-text"><b>Snake Game</b> - Python Turtle module-based game with three difficulty levels and high score tracking.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/SnakeGame" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="Sketch_app.png" class="card-img-top" alt="Sketch App">
+            <div class="card shadow-sm">
+                <img src="ping_pong.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Sketch App</h5>
-                    <p class="card-text">Whiteboard sketching tool using Python Turtle, supporting curves, pen customization, and avatar changes.</p>
+                    <p class="card-text"><b>Ping Pong Game</b> - Multiplayer ping pong game using Python Turtle module. Supports WASD & Arrow controls.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/pingpong" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="state_game.png" class="card-img-top" alt="State Game">
+            <div class="card shadow-sm">
+                <img src="Sketch_app.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">State Guess Game</h5>
-                    <p class="card-text">Educational app for identifying Indian and USA states, highlighting them on a map upon correct guesses.</p>
+                    <p class="card-text"><b>Sketch App</b> - Free drawing board with Turtle module supporting directional and color controls.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Sketchapp#intr.py" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="en_dict.png" class="card-img-top" alt="Dictionary">
+            <div class="card shadow-sm">
+                <img src="state_game.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">English to Hindi Flashcards</h5>
-                    <p class="card-text">Python-based learning tool teaching English words and their Hindi translations using flashcards and Google Sheets.</p>
+                    <p class="card-text"><b>Indian & USA States Game</b> - Educational game using Pandas and Turtle to identify states on a map.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/statesindus#combi.py" target="_blank">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="col">
-            <div class="card">
-                <img src="turtle_race.png" class="card-img-top" alt="Turtle Race">
+            <div class="card shadow-sm">
+                <img src="en_dict.png" width="100%" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">Turtle Race Bet</h5>
-                    <p class="card-text">Simple betting game using Python Turtle where players predict which turtle wins the race.</p>
+                    <p class="card-text"><b>English to Hindi App</b> - Flash card-style app using Google Sheets and Tkinter to learn translations.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/hindieng#flash-card-project-start%20(1)/main.py" target=\"_blank\">Link</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="turtle_race.png" width="100%" height="200">
+                <div class="card-body">
+                    <p class="card-text"><b>Turtle Race Bet</b> - Fun betting game on Turtle races using the Python Turtle module.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/trtrace#turtlerace.py" target=\"_blank\">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 

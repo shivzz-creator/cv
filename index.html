@@ -1,145 +1,148 @@
-<!-- Save as index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivansh Pareek - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f8f9fa;
+        }
 
-  <title>Shivansh Pareek</title>
+        .navbar-dark .navbar-nav .nav-link {
+            color: #f8f9fa;
+        }
 
-  <style>
-    img { border: 2px solid white; }
-    #userpic { height:32px; width:32px; margin:5px; padding:4px; border:2px inset white; border-radius:50%; }
-    #nav-icon { width:18px; padding: 0 5px; margin-right:10px; display:flex; }
-    #icon-bar { padding:10px; margin-right:30px; margin-left:1px; border-right:1px solid #a3c2c2; }
-    #navbar-list a { color:white; }
-    #navbar-list a:hover { color:blue; padding:6px; margin-bottom:4px; transition: all 0.3s ease; font-size:16px; background-color:#a3c2c2; }
-    .container { position:relative; top:100px; }
-  </style>
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .resume-btn {
+            background-color: #2575fc;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .skills li, .hobbies li {
+            margin-bottom: 8px;
+        }
+
+        .media-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .media-container img {
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+
+        a {
+            color: #4da8ff;
+        }
+    </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-  <a class="navbar-brand" href="index.html">
-    <img src="port_pic.jfif" width="30" height="30" class="d-inline-block align-top" alt=""> <b>Shivansh Pareek</b>
-  </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="navbar-list">
-      <li class="nav-item"><a class="nav-link" href="index.html" id="icon-bar"><b>HOME</b> <i class="fa fa-home" id="nav-icon"></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="project.html" id="icon-bar"><b>PROJECTS</b> <i class="fa fa-cog" id="nav-icon"></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="cert.html" id="icon-bar"><b>ACHIEVEMENTS</b> <i class="fa fa-book" id="nav-icon"></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="contactme.html" id="icon-bar"><b>CONTACT ME</b> <i class="fa fa-phone" id="nav-icon"></i></a></li>
-    </ul>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Shivansh Pareek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div class="container">
-  <h1>WELCOME TO MY PORTFOLIO WEBSITE</h1>
-  <hr>
-  <div class="btn-group">
-    <a href="index.html" class="btn btn-primary active">HOME</a>
-    <a href="project.html" class="btn btn-primary">PROJECTS</a>
-    <a href="cert.html" class="btn btn-primary">ACHIEVEMENTS</a>
-    <a href="contactme.html" class="btn btn-primary">CONTACT ME</a>
-  </div>
-  <hr class="featurette-divider">
-  <a class="btn btn-primary" href="resumeShivanshUpdated.pdf" role="button">View Resume</a>
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">About Me <span class="text-muted"><br>Shivansh Pareek</span></h2>
-      <p class="lead">I am Shivansh Pareek from New Delhi, India. Currently working as a backend developer & Generative AI engineer. Skilled in developing scalable solutions using Java, Python, Spring Boot, and AWS services. Passionate about AI, cloud computing, and backend architectures.</p>
-      <p>Rest about my <b>education</b>, <b>skills</b>, and <b>hobbies</b> is mentioned in the accordions below. 😊😊</p>
-    </div>
-    <div class="col-md-5">
-      <img src="port_pic.jfif" width="400" height="400">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="accordion" id="accordionExample">
-    <!-- Education Section -->
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEdu"><b>EDUCATION</b> 👨‍🎓👨‍🎓</button></h2>
-      <div id="collapseEdu" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          <table class="table table-primary table-hover">
-            <thead><tr><th>Year</th><th>Institute</th><th>Qf</th><th>Grade</th></tr></thead>
-            <tbody>
-              <tr><td>2016-2017</td><td>N.K Bagrodia Public School (10th), Delhi</td><td>Secondary</td><td>10.00 CGPA</td></tr>
-              <tr><td>2018-2019</td><td>N.K Bagrodia Public School (12th), Delhi</td><td>Senior Secondary</td><td>94.3% (PCM)</td></tr>
-              <tr><td>2019-2023</td><td>The LNM Institute of Information Technology, Jaipur</td><td>B.Tech in Computers and Communication Engineering</td><td>7.63 CGPA</td></tr>
-            </tbody>
-          </table>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="navbar-list">
+                    <li class="nav-item"><a class="nav-link" href="index.html" id="icon-bar"><b>HOME</b> <i class="fa fa-home" id="nav-icon"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html" id="icon-bar"><b>PROJECTS</b> <i class="fa fa-cog" id="nav-icon"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="cert.html" id="icon-bar"><b>ACHIEVEMENTS</b> <i class="fa fa-book" id="nav-icon"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactme.html" id="icon-bar"><b>CONTACT ME</b> <i class="fa fa-phone" id="nav-icon"></i></a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
+    </nav>
 
-    <!-- Skills Section -->
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseSkills"><b>SKILLS</b> ✨✨</button></h2>
-      <div id="collapseSkills" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          <table class="table table-primary table-hover">
-            <tr>
-              <td>
-                <table cellpadding="10">
-                  <tr><td>Java</td><td>⭐⭐⭐⭐⭐</td></tr>
-                  <tr><td>Python</td><td>⭐⭐⭐⭐⭐</td></tr>
-                  <tr><td>JavaScript</td><td>⭐⭐⭐⭐</td></tr>
-                  <tr><td>C</td><td>⭐⭐⭐</td></tr>
-                  <tr><td>SQL</td><td>⭐⭐⭐⭐</td></tr>
-                  <tr><td>ReactJS</td><td>⭐⭐⭐</td></tr>
-                </table>
-              </td>
-              <td>
-                <table class="table table-info table-hover">
-                  <tr><td>Spring Boot & REST APIs</td><td>⭐⭐⭐⭐⭐</td></tr>
-                  <tr><td>Data Structures & Algorithms</td><td>⭐⭐⭐⭐</td></tr>
-                  <tr><td>HTML, CSS, Bootstrap</td><td>⭐⭐⭐⭐</td></tr>
-                  <tr><td>AWS (ECS, RDS, S3, SQS)</td><td>⭐⭐⭐</td></tr>
-                  <tr><td>LLMs & Generative AI</td><td>⭐⭐⭐</td></tr>
-                  <tr><td>Machine Learning</td><td>⭐⭐⭐</td></tr>
-                  <tr><td>Docker & Git</td><td>⭐⭐⭐</td></tr>
-                </table>
-              </td>
-            </tr>
-          </table>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hello, I'm Shivansh Pareek</h1>
+            <p class="lead">Software Engineer at Samsung Electronics | Generative AI Enthusiast | Backend Developer</p>
+            <p class="mt-4">I'm passionate about creating impactful AI solutions and robust backend systems. With a background in software engineering and an inclination towards teaching and mentoring, I continuously strive to innovate and learn. Outside of tech, I enjoy analyzing cricket data and exploring different cultures through travel.</p>
+            <a class="resume-btn" href="assets/resume/Shivansh_Pareek_Resume.pdf" target="_blank">Download Resume</a>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Hobbies Section -->
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseHobbies"><b>HOBBIES</b> 🏋️‍♂️🏌️‍♂️🏊‍♂️✍</button></h2>
-      <div id="collapseHobbies" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          <h3>Some Hobbies</h3>
-          <ul>
-            <li><b>Sports:</b>
-              <ol>
-                <li>Cricket</li>
-                <li>Badminton</li>
-                <li>Workout</li>
-                <li>Running</li>
-              </ol>
-            </li>
-            <li>Travelling</li>
-            <li>Writing Quotes</li>
-          </ul>
+    <div class="container">
+
+        <!-- Media Section -->
+        <div class="media-container">
+            <h2 class="section-title">About Me</h2>
+            <img src="assets/images/profile_placeholder.jpg" alt="Your Photo">
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Education -->
+        <h2 class="section-title">Education</h2>
+        <ul>
+            <li><strong>The LNM Institute of Information Technology</strong> - B.Tech in Computers & Communication, CGPA: 7.63 (2019-2023)</li>
+            <li><strong>N.K Bagrodia Public School</strong> - Senior Secondary: 94.3%, 10th CGPA: 10.0</li>
+        </ul>
+
+        <!-- Skills -->
+        <h2 class="section-title">Skills</h2>
+        <ul class="skills">
+            <li><strong>Languages:</strong> Python, Java, JavaScript, SQL</li>
+            <li><strong>Backend & Frameworks:</strong> Flask, NodeJS, RESTful APIs</li>
+            <li><strong>Databases:</strong> PostgreSQL (pgvector), MySQL, MongoDB</li>
+            <li><strong>DevOps & Cloud:</strong> Docker, Git, Jenkins, AWS (EC2, S3, RDS, SQS, Lambda, ECS, Bedrock), CloudFront</li>
+            <li><strong>Generative AI:</strong> LangChain, Vector Embeddings, LLM Fine-tuning, SDXL, Prompt Engineering</li>
+            <li><strong>Soft Skills:</strong> Problem Solving, Mentoring, Documentation, Clean Code, Communication, Architecture Design</li>
+        </ul>
+
+        <!-- Hobbies -->
+        <h2 class="section-title">Hobbies</h2>
+        <ul class="hobbies">
+            <li>Reading about AI advancements</li>
+            <li>Cricket Analytics</li>
+            <li>Tech Blogging</li>
+            <li>Traveling & Exploring Cultures</li>
+            <li>Mentoring Juniors & Hackathons</li>
+        </ul>
+
+        <!-- Contact Links -->
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Email: <a href="mailto:shivanshp99@gmail.com">shivanshp99@gmail.com</a></p>
+        <p>Mobile: +91 8448779855</p>
+        <p>GitHub: <a href="https://github.com/shivzz-creator" target="_blank">shivzz-creator</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/shivansh-pareek-6025711b0/" target="_blank">shivansh-pareek</a></p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

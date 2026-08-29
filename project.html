@@ -2,342 +2,850 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivansh Pareek - Projects</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #f8f9fa;
-        }
-        .navbar-dark .navbar-nav .nav-link {
-            color: #f8f9fa;
-            transition: color 0.3s ease;
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: #4da8ff;
-        }
-        .section-title {
-            font-weight: bold;
-            margin-top: 80px;
-            margin-bottom: 30px;
-            color: #ffffff;
-            text-align: center;
-        }
-        .card {
-            background-color: #1f1f1f;
-            border: none;
-            color: #f8f9fa;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-body {
-            min-height: 240px;
-            font-size: 14px;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(77, 168, 255, 0.3);
-        }
-        .btn-primary {
-            background-color: #2575fc;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #4da8ff;
-        }
-        .container {
-            padding-top: 120px;
-        }
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivansh Pareek — Projects</title>
+<meta name="description" content="Projects by Shivansh Pareek — AI/LLM systems, agentic pipelines, and full-stack engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-raised:#10151c;
+    --surface:#161b22;
+    --surface-hover:#1c2128;
+    --border:#30363d;
+    --border-soft:#21262d;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --faint:#5b6673;
+
+    --blue:#58a6ff;
+    --orange:#ffa657;
+    --purple:#d2a8ff;
+    --green:#7ee787;
+    --red:#ff7b72;
+
+    --mono:'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --sans:'Inter', -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(88,166,255,0.06), transparent 40%),
+      radial-gradient(circle at 88% 65%, rgba(126,231,135,0.05), transparent 45%);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:rgba(88,166,255,0.35); color:#fff; }
+
+  /* ---------- scrollbar ---------- */
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:var(--border); border-radius:6px; }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--faint); }
+
+  /* ---------- top chrome bar ---------- */
+  .chrome-bar{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(13,17,23,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .chrome-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px 24px;
+    max-width:1180px;
+    margin:0 auto;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .dots{ display:flex; gap:7px; flex-shrink:0; }
+  .dot{ width:11px; height:11px; border-radius:50%; }
+  .dot.r{ background:#ff5f57; }
+  .dot.y{ background:#febc2e; }
+  .dot.g{ background:#28c840; }
+  .chrome-path{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--muted);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .chrome-path b{ color:var(--text); font-weight:600; }
+
+  .tabbar{
+    display:flex;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+    gap:2px;
+    overflow-x:auto;
+  }
+  .tab{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 18px;
+    font-family:var(--mono);
+    font-size:13px;
+    font-weight:500;
+    color:var(--muted);
+    border-bottom:2px solid transparent;
+    white-space:nowrap;
+    transition:color .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .tab i{ font-size:12px; }
+  .tab:hover{ color:var(--text); background:var(--surface-hover); }
+  .tab.active{ color:var(--blue); border-bottom-color:var(--blue); background:var(--surface); }
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- hero / terminal ---------- */
+  .hero{
+    padding:154px 0 70px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:28px;
+    align-items:stretch;
+  }
+
+  .filetree{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px 14px;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .filetree-head{
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--faint);
+    margin-bottom:10px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .filetree ul{ list-style:none; margin:0; padding:0; }
+  .filetree li{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 6px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease;
+  }
+  .filetree li:hover{ background:var(--surface-hover); color:var(--text); }
+  .fdot{ width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+
+  .terminal{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:30px 34px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:280px;
+  }
+  .term-line{
+    font-family:var(--mono);
+    font-size:14.5px;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .term-line .prompt{ color:var(--green); margin-right:8px; }
+  .term-line .cmd{ color:var(--text); }
+
+  .hero-name{
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 46px);
+    color:var(--text);
+    margin:14px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .hero-role{
+    font-size:16.5px;
+    color:var(--muted);
+    max-width:640px;
+    margin:0 0 22px;
+  }
+  .hero-role .hl{ color:var(--blue); font-weight:600; }
+  .hero-role .hl2{ color:var(--green); font-weight:600; }
+  .hero-role .hl3{ color:var(--purple); font-weight:600; }
+
+  .cursor{
+    display:inline-block;
+    width:8px; height:17px;
+    background:var(--green);
+    margin-left:4px;
+    vertical-align:-3px;
+    animation:blink 1.05s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:7px;
+    border:1px solid var(--border);
+    transition:transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-solid{
+    background:var(--blue);
+    color:#04101f;
+    border-color:var(--blue);
+  }
+  .btn-solid:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(88,166,255,0.25); }
+  .btn-ghost{ color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--faint); background:var(--surface-hover); transform:translateY(-2px); }
+
+  .stat-row{
+    display:flex;
+    gap:26px;
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid var(--border-soft);
+    flex-wrap:wrap;
+  }
+  .stat b{
+    display:block;
+    font-family:var(--mono);
+    font-size:20px;
+    font-weight:700;
+    color:var(--text);
+  }
+  .stat span{
+    font-size:12px;
+    color:var(--faint);
+    font-family:var(--mono);
+  }
+
+  /* ---------- section headers ---------- */
+  .section{ padding:64px 0 8px; }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .branch-dot{
+    width:10px; height:10px;
+    border-radius:50%;
+    flex-shrink:0;
+    box-shadow:0 0 0 4px currentColor22;
+  }
+  .section-path{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--faint);
+    letter-spacing:.01em;
+  }
+  .section-title{
+    font-family:var(--mono);
+    font-size:clamp(20px,2.6vw,26px);
+    font-weight:700;
+    color:var(--text);
+    margin:2px 0 6px;
+  }
+  .section-sub{
+    color:var(--muted);
+    font-size:14.5px;
+    max-width:620px;
+    margin:0 0 30px;
+  }
+
+  /* ---------- card grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:22px;
+    padding-bottom:16px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:var(--faint);
+    box-shadow:0 16px 32px rgba(0,0,0,0.35);
+  }
+
+  .card-tab{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 14px;
+    border-bottom:1px solid var(--border-soft);
+    background:var(--bg-raised);
+  }
+  .card-tab .fdot{ width:8px; height:8px; }
+  .card-tab .fname{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  .card-media{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    background:#000;
+  }
+  .card-media img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(0.92) brightness(0.94);
+    transition:transform .5s ease, filter .3s ease;
+  }
+  .card:hover .card-media img{
+    transform:scale(1.06);
+    filter:saturate(1.02) brightness(1);
+  }
+
+  .card-body{
+    padding:18px 18px 20px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .card-title{
+    font-size:16px;
+    font-weight:700;
+    color:var(--text);
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .card-desc{
+    font-size:13.5px;
+    color:var(--muted);
+    margin:0 0 14px;
+    flex:1;
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:16px;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:3px 9px;
+    border-radius:5px;
+    background:var(--bg-raised);
+    border:1px solid var(--border-soft);
+    color:var(--muted);
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    border-top:1px solid var(--border-soft);
+  }
+  .no-link{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--faint);
+  }
+  .card-link{
+    font-family:var(--mono);
+    font-size:12.5px;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    transition:gap .15s ease, color .15s ease;
+  }
+  .card-link:hover{ gap:10px; }
+  .card-link .arrow{ transition:transform .15s ease; }
+  .card-link:hover .arrow{ transform:translateX(2px); }
+
+  /* ---------- footer ---------- */
+  .footer{
+    margin-top:90px;
+    padding:34px 0 60px;
+    border-top:1px solid var(--border-soft);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-line{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--faint);
+  }
+  .footer-line b{ color:var(--muted); }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .filetree{ order:2; }
+  }
+  @media (max-width:600px){
+    .chrome-top{ padding:10px 16px; }
+    .shell{ padding:0 16px; }
+    .hero{ padding-top:140px; }
+    .terminal{ padding:24px 20px; }
+    .stat-row{ gap:18px; }
+  }
+
+  /* focus visibility */
+  a:focus-visible, .tab:focus-visible, li:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:2px;
+    border-radius:4px;
+  }
+</style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Shivansh Pareek</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html"><b>HOME</b> <i class="fa fa-home"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="project.html"><b>PROJECTS</b> <i class="fa fa-cog"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="cert.html"><b>ACHIEVEMENTS</b> <i class="fa fa-book"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="contactme.html"><b>CONTACT ME</b> <i class="fa fa-phone"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div class="chrome-bar">
+  <div class="chrome-top">
+    <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+    <div class="chrome-path"><b>shivansh-pareek</b> — projects.html</div>
+  </div>
+  <nav class="tabbar">
+    <a class="tab" href="index.html"><i class="fa fa-home"></i>home.html</a>
+    <a class="tab active" href="project.html"><i class="fa fa-code"></i>projects.html</a>
+    <a class="tab" href="cert.html"><i class="fa fa-trophy"></i>achievements.html</a>
+    <a class="tab" href="contactme.html"><i class="fa fa-envelope-o"></i>contact.html</a>
+  </nav>
+</div>
 
-<div class="container">
+<div class="shell">
 
-    <!-- Samsung Electronics Projects -->
-    <h1 class="section-title">Samsung Electronics Projects</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="CTG.jpg" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Corporate Template Generator</b> - Built using LangChain and LLMs, this tool generates business templates with integrated image pipelines, reducing manual work drastically.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="VS.jpg" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Video Similarity Pipeline</b> - Designed a scalable video search pipeline using FAISS and PostgreSQL, achieving a 4-second response time across 1,000+ videos.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
 
-    <!-- Pepcoding Internship Projects -->
-    <h1 class="section-title">Pepcoding Internship Projects</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="nados.jpeg" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>NADOS Backend APIs</b> - Developed RESTful APIs for the NADOS platform serving 10,000+ students with optimized search and 99.9% uptime.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="sscr.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>IPL Analyzer Project</b> - Extracts useful statistics from ESPN data for teams and players.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+      <aside class="filetree">
+        <div class="filetree-head">Explorer</div>
+        <ul>
+          <li onclick="document.getElementById('samsung').scrollIntoView({behavior:'smooth'})"><span class="fdot" style="background:var(--blue)"></span>samsung-electronics/</li>
+          <li onclick="document.getElementById('pepcoding').scrollIntoView({behavior:'smooth'})"><span class="fdot" style="background:var(--orange)"></span>pepcoding-internship/</li>
+          <li onclick="document.getElementById('personal').scrollIntoView({behavior:'smooth'})"><span class="fdot" style="background:var(--purple)"></span>personal-projects/</li>
+          <li onclick="document.getElementById('agentic').scrollIntoView({behavior:'smooth'})"><span class="fdot" style="background:var(--green)"></span>generative-agentic-ai/</li>
+          <li onclick="document.getElementById('fullstack').scrollIntoView({behavior:'smooth'})"><span class="fdot" style="background:var(--red)"></span>fullstack-backend/</li>
+        </ul>
+      </aside>
 
-    <!-- Personal Projects & Hobby Tools -->
-    <h1 class="section-title">Personal Projects & Hobby Tools</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="password_manager.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Password Manager</b> - Built with Tkinter and JSON for secure password generation and storage.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Password-Manager" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
+      <div class="terminal">
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">whoami</span></div>
+        <h1 class="hero-name">Shivansh Pareek<span class="cursor"></span></h1>
+        <p class="hero-role">
+          Software engineer building <span class="hl">LLM &amp; agentic systems</span>, <span class="hl2">retrieval pipelines</span>, and <span class="hl3">full-stack products</span> — currently shipping AI tooling at Samsung Electronics, with a track record of internship, personal, and open-source work below.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#samsung">Browse projects <i class="fa fa-arrow-down"></i></a>
+          <a class="btn btn-ghost" href="contactme.html">Get in touch <i class="fa fa-arrow-right"></i></a>
         </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="fc_det.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Face Detector</b> - Uses OpenCV and pre-trained XML data to detect faces by analyzing light reflection.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/facedet#face_detector.py" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-row">
+          <div class="stat"><b>21</b><span>projects shipped</span></div>
+          <div class="stat"><b>5</b><span>domains covered</span></div>
+          <div class="stat"><b>99.9%</b><span>uptime, NADOS APIs</span></div>
+          <div class="stat"><b>&lt;4s</b><span>video search @ 1k+ videos</span></div>
         </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="quizz_app.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Animals Quiz App</b> - Built with Python OOPs, Tkinter, and a Quiz API. Generates 10 random questions each time.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Animalquiz#main.py" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="kyle_quotes.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Quotes App</b> - Displays quotes from the Kanye West Quotes API using Python and Tkinter.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/Kylequotes" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="snake_game.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Snake Game</b> - Python Turtle module-based game with three difficulty levels and high score tracking.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/SnakeGame" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="ping_pong.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Ping Pong Game</b> - Multiplayer ping pong game using Python Turtle module. Supports WASD & Arrow controls.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://replit.com/@shivzzcreator/pingpong" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Add remaining personal projects as per your previous code -->
-    </div>
+      </div>
 
-    <!-- Generative / Agentic / RAG AI Projects -->
-    <h1 class="section-title">Generative / Agentic / RAG AI Projects</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="ai_vault.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>AI-Powered Vault Document System</b> - RAG-based system for document insights and chat.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/AI-Powered-Vault-Document-System" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="ai_job.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>AI Job Recommender MCP</b> - AI-powered system for job recommendations.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/AI-JobRecommender-MCP" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="langraph_chat.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Langraph Chatbot</b> - Basic LLM-based chatbot implementation using Langraph.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/Langraph-Chatbot-Basic-Implementation" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="vacuum_agent.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Vacuum Cleaner AI Agent</b> - Simple reflex agent simulation.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/Vacuum-Cleaner-Simple-Reflex-Agent-Simulation-AI-Agent-" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="doctor_agent.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Doctor Appointment AI Agent</b> - Goal-based agent for booking doctor appointments.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/Goal-Based-Agent-for-Doctor-Appointment-Booking" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+  </section>
 
-    <!-- FullStack & Backend Projects -->
-    <h1 class="section-title">FullStack & Backend Projects</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="file_manager.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>File Manager System</b> - FullStack file management system project.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/file_Manager_System" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="ipl_scraper.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>IPL Data Scraper</b> - Node.js project scraping IPL data.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/IPL_data_scraper" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="stock_info.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Stock Info App</b> - Stock information tracker project.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/stockInfo" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="instareels.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Insta Reels</b> - Project to automate/manage Instagram reels.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/InstaReels" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="bakery_app.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>Bakery Application</b> - FullStack bakery management app.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/BakeryApplication" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="react_todo.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>React TODO App</b> - Simple TODO application using React.js.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/React_TODO_APP" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="col">
-            <div class="card shadow-sm">
-                <img src="dryclean.png" width="100%" height="200">
-                <div class="card-body">
-                    <p class="card-text"><b>DryClean Site</b> - Dry cleaning business website project.</p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="https://github.com/shivzz-creator/dryclean_site" target="_blank">Link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- SAMSUNG -->
+  <section class="section reveal" id="samsung">
+    <div class="section-head">
+      <span class="branch-dot" style="background:var(--blue); color:var(--blue);"></span>
+      <span class="section-path">~/experience/samsung-electronics</span>
     </div>
+    <h2 class="section-title">Samsung Electronics</h2>
+    <p class="section-sub">Production AI tooling and search infrastructure built for internal teams and large-scale media catalogs.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--blue)"></span><span class="fname">corporate-template-generator.py</span></div>
+        <div class="card-media"><img src="CTG.jpg" alt="Corporate Template Generator interface"></div>
+        <div class="card-body">
+          <h3 class="card-title">Corporate Template Generator</h3>
+          <p class="card-desc">An LLM-powered authoring tool built with LangChain that assembles polished business templates end to end, wiring in an automated image pipeline so teams go from brief to finished document without manual formatting.</p>
+          <div class="tags"><span class="tag">LangChain</span><span class="tag">LLMs</span><span class="tag">Python</span><span class="tag">Image Pipeline</span></div>
+          <div class="card-foot"><span class="no-link">Internal — Samsung Electronics</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--blue)"></span><span class="fname">video-similarity-pipeline.py</span></div>
+        <div class="card-media"><img src="VS.jpg" alt="Video Similarity Pipeline dashboard"></div>
+        <div class="card-body">
+          <h3 class="card-title">Video Similarity Pipeline</h3>
+          <p class="card-desc">A scalable vector search pipeline pairing FAISS with PostgreSQL to index and match video content, returning similarity results in under 4 seconds across a catalog of 1,000+ videos.</p>
+          <div class="tags"><span class="tag">FAISS</span><span class="tag">PostgreSQL</span><span class="tag">Vector Search</span><span class="tag">Python</span></div>
+          <div class="card-foot"><span class="no-link">Internal — Samsung Electronics</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PEPCODING -->
+  <section class="section reveal" id="pepcoding">
+    <div class="section-head">
+      <span class="branch-dot" style="background:var(--orange); color:var(--orange);"></span>
+      <span class="section-path">~/experience/pepcoding-internship</span>
+    </div>
+    <h2 class="section-title">Pepcoding Internship</h2>
+    <p class="section-sub">Backend services and data tooling built for a live ed-tech platform serving thousands of students.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--orange)"></span><span class="fname">nados-backend-apis.js</span></div>
+        <div class="card-media"><img src="nados.jpeg" alt="NADOS platform interface"></div>
+        <div class="card-body">
+          <h3 class="card-title">NADOS Backend APIs</h3>
+          <p class="card-desc">RESTful services powering the NADOS learning platform for 10,000+ students, with optimized search endpoints and a hardened deployment that held 99.9% uptime in production.</p>
+          <div class="tags"><span class="tag">REST APIs</span><span class="tag">Backend</span><span class="tag">Search Optimization</span></div>
+          <div class="card-foot"><span class="no-link">Pepcoding Internship</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--orange)"></span><span class="fname">ipl-analyzer.py</span></div>
+        <div class="card-media"><img src="sscr.png" alt="IPL Analyzer statistics view"></div>
+        <div class="card-body">
+          <h3 class="card-title">IPL Analyzer Project</h3>
+          <p class="card-desc">A data analysis tool that mines ESPN's IPL data to surface team and player statistics, turning raw match records into readable performance breakdowns.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">Web Scraping</span></div>
+          <div class="card-foot"><span class="no-link">Pepcoding Internship</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section class="section reveal" id="personal">
+    <div class="section-head">
+      <span class="branch-dot" style="background:var(--purple); color:var(--purple);"></span>
+      <span class="section-path">~/projects/personal</span>
+    </div>
+    <h2 class="section-title">Personal Projects &amp; Hobby Tools</h2>
+    <p class="section-sub">Self-directed builds exploring desktop apps, computer vision, and classic game mechanics from scratch.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">password_manager.py</span></div>
+        <div class="card-media"><img src="password_manager.png" alt="Password Manager app"></div>
+        <div class="card-body">
+          <h3 class="card-title">Password Manager</h3>
+          <p class="card-desc">A desktop utility built with Tkinter that generates strong passwords on demand and stores credentials locally in JSON, with a clean lookup flow for retrieving saved logins.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">JSON</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/Password-Manager" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">face_detector.py</span></div>
+        <div class="card-media"><img src="fc_det.png" alt="Face Detector application"></div>
+        <div class="card-body">
+          <h3 class="card-title">Face Detector</h3>
+          <p class="card-desc">A real-time face detection app built on OpenCV using pre-trained Haar cascade XML classifiers, tuned to identify faces reliably across varying light conditions.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Computer Vision</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/facedet#face_detector.py" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">main.py</span></div>
+        <div class="card-media"><img src="quizz_app.png" alt="Animals Quiz App"></div>
+        <div class="card-body">
+          <h3 class="card-title">Animals Quiz App</h3>
+          <p class="card-desc">An object-oriented quiz application built with Tkinter that pulls from a live Quiz API, shuffling in 10 fresh animal-themed questions on every playthrough.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">OOP</span><span class="tag">Tkinter</span><span class="tag">REST API</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/Animalquiz#main.py" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">kanye_quotes.py</span></div>
+        <div class="card-media"><img src="kyle_quotes.png" alt="Quotes App interface"></div>
+        <div class="card-body">
+          <h3 class="card-title">Quotes App</h3>
+          <p class="card-desc">A lightweight Tkinter client that fetches and displays quotes from the Kanye West Quotes API, refreshing on each request for a new one-liner.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Public API</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/Kylequotes" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">snake_game.py</span></div>
+        <div class="card-media"><img src="snake_game.png" alt="Snake Game screenshot"></div>
+        <div class="card-body">
+          <h3 class="card-title">Snake Game</h3>
+          <p class="card-desc">A Python Turtle-powered take on the classic snake game, with three selectable difficulty levels and persistent high-score tracking between sessions.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Turtle</span><span class="tag">Game Dev</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/SnakeGame" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--purple)"></span><span class="fname">ping_pong.py</span></div>
+        <div class="card-media"><img src="ping_pong.png" alt="Ping Pong Game screenshot"></div>
+        <div class="card-body">
+          <h3 class="card-title">Ping Pong Game</h3>
+          <p class="card-desc">A local two-player ping pong game built with the Python Turtle module, supporting both WASD and arrow-key controls for simultaneous play.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Turtle</span><span class="tag">Multiplayer</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--purple)" href="https://replit.com/@shivzzcreator/pingpong" target="_blank" rel="noopener">View source <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AGENTIC / AI -->
+  <section class="section reveal" id="agentic">
+    <div class="section-head">
+      <span class="branch-dot" style="background:var(--green); color:var(--green);"></span>
+      <span class="section-path">~/projects/generative-agentic-ai</span>
+    </div>
+    <h2 class="section-title">Generative, Agentic &amp; RAG AI</h2>
+    <p class="section-sub">LLM-driven systems spanning retrieval-augmented generation, multi-agent tooling, and classical AI agents.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--green)"></span><span class="fname">vault-rag-system.py</span></div>
+        <div class="card-media"><img src="ai_vault.png" alt="AI-Powered Vault Document System"></div>
+        <div class="card-body">
+          <h3 class="card-title">AI-Powered Vault Document System</h3>
+          <p class="card-desc">A retrieval-augmented generation system that ingests documents into a vault and lets users chat with their content directly, surfacing grounded answers and key insights on demand.</p>
+          <div class="tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Python</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--green)" href="https://github.com/shivzz-creator/AI-Powered-Vault-Document-System" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--green)"></span><span class="fname">job-recommender-mcp.py</span></div>
+        <div class="card-media"><img src="ai_job.png" alt="AI Job Recommender MCP"></div>
+        <div class="card-body">
+          <h3 class="card-title">AI Job Recommender MCP</h3>
+          <p class="card-desc">An MCP-based recommendation system that reasons over a candidate's profile to surface relevant job matches, built as a Model Context Protocol server for tool-driven workflows.</p>
+          <div class="tags"><span class="tag">MCP</span><span class="tag">AI Agents</span><span class="tag">Python</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--green)" href="https://github.com/shivzz-creator/AI-JobRecommender-MCP" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--green)"></span><span class="fname">langgraph_chatbot.py</span></div>
+        <div class="card-media"><img src="langraph_chat.png" alt="Langraph Chatbot interface"></div>
+        <div class="card-body">
+          <h3 class="card-title">LangGraph Chatbot</h3>
+          <p class="card-desc">A foundational conversational agent implemented with LangGraph, structuring LLM calls as a stateful graph to handle multi-turn dialogue flow.</p>
+          <div class="tags"><span class="tag">LangGraph</span><span class="tag">LLMs</span><span class="tag">Python</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--green)" href="https://github.com/shivzz-creator/Langraph-Chatbot-Basic-Implementation" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--green)"></span><span class="fname">vacuum_agent.py</span></div>
+        <div class="card-media"><img src="vacuum_agent.png" alt="Vacuum Cleaner AI Agent simulation"></div>
+        <div class="card-body">
+          <h3 class="card-title">Vacuum Cleaner AI Agent</h3>
+          <p class="card-desc">A classic simple-reflex agent simulation that senses its environment and acts on percepts alone, illustrating core AI agent theory in an interactive form.</p>
+          <div class="tags"><span class="tag">AI Agents</span><span class="tag">Simulation</span><span class="tag">Python</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--green)" href="https://github.com/shivzz-creator/Vacuum-Cleaner-Simple-Reflex-Agent-Simulation-AI-Agent-" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--green)"></span><span class="fname">doctor_agent.py</span></div>
+        <div class="card-media"><img src="doctor_agent.png" alt="Doctor Appointment AI Agent"></div>
+        <div class="card-body">
+          <h3 class="card-title">Doctor Appointment AI Agent</h3>
+          <p class="card-desc">A goal-based agent that plans and executes the steps needed to book a doctor's appointment, reasoning toward its objective rather than following fixed rules.</p>
+          <div class="tags"><span class="tag">AI Agents</span><span class="tag">Planning</span><span class="tag">Python</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--green)" href="https://github.com/shivzz-creator/Goal-Based-Agent-for-Doctor-Appointment-Booking" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULLSTACK -->
+  <section class="section reveal" id="fullstack">
+    <div class="section-head">
+      <span class="branch-dot" style="background:var(--red); color:var(--red);"></span>
+      <span class="section-path">~/projects/fullstack-backend</span>
+    </div>
+    <h2 class="section-title">Full-Stack &amp; Backend</h2>
+    <p class="section-sub">End-to-end web applications and Node.js services, from data scrapers to customer-facing storefronts.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">file-manager-system.js</span></div>
+        <div class="card-media"><img src="file_manager.png" alt="File Manager System"></div>
+        <div class="card-body">
+          <h3 class="card-title">File Manager System</h3>
+          <p class="card-desc">A full-stack file management system for uploading, organizing, and retrieving files through a browser-based interface.</p>
+          <div class="tags"><span class="tag">Full-Stack</span><span class="tag">JavaScript</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/file_Manager_System" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">ipl-data-scraper.js</span></div>
+        <div class="card-media"><img src="ipl_scraper.png" alt="IPL Data Scraper"></div>
+        <div class="card-body">
+          <h3 class="card-title">IPL Data Scraper</h3>
+          <p class="card-desc">A Node.js scraper that pulls structured IPL match and player data from source sites for downstream analysis.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Web Scraping</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/IPL_data_scraper" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">stock-info.js</span></div>
+        <div class="card-media"><img src="stock_info.png" alt="Stock Info App"></div>
+        <div class="card-body">
+          <h3 class="card-title">Stock Info App</h3>
+          <p class="card-desc">A stock information tracker that surfaces live pricing and company data through a simple web front end.</p>
+          <div class="tags"><span class="tag">Full-Stack</span><span class="tag">API Integration</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/stockInfo" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">insta-reels.js</span></div>
+        <div class="card-media"><img src="instareels.png" alt="Insta Reels project"></div>
+        <div class="card-body">
+          <h3 class="card-title">Insta Reels</h3>
+          <p class="card-desc">A project for automating and managing Instagram Reels workflows, reducing repetitive manual posting steps.</p>
+          <div class="tags"><span class="tag">Automation</span><span class="tag">JavaScript</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/InstaReels" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">bakery-app.js</span></div>
+        <div class="card-media"><img src="bakery_app.png" alt="Bakery Application"></div>
+        <div class="card-body">
+          <h3 class="card-title">Bakery Application</h3>
+          <p class="card-desc">A full-stack management app for a bakery business, covering orders and day-to-day storefront operations.</p>
+          <div class="tags"><span class="tag">Full-Stack</span><span class="tag">JavaScript</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/BakeryApplication" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">react-todo-app.jsx</span></div>
+        <div class="card-media"><img src="react_todo.png" alt="React TODO App"></div>
+        <div class="card-body">
+          <h3 class="card-title">React TODO App</h3>
+          <p class="card-desc">A clean, component-driven to-do list built in React, covering the core create-read-update-delete task flow.</p>
+          <div class="tags"><span class="tag">React.js</span><span class="tag">JavaScript</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/React_TODO_APP" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tab"><span class="fdot" style="background:var(--red)"></span><span class="fname">dryclean-site.js</span></div>
+        <div class="card-media"><img src="dryclean.png" alt="DryClean business website"></div>
+        <div class="card-body">
+          <h3 class="card-title">DryClean Site</h3>
+          <p class="card-desc">A business website for a dry-cleaning service, built to showcase offerings and make it easy for customers to get in touch.</p>
+          <div class="tags"><span class="tag">Full-Stack</span><span class="tag">Web</span></div>
+          <div class="card-foot"><a class="card-link" style="color:var(--red)" href="https://github.com/shivzz-creator/dryclean_site" target="_blank" rel="noopener">View repo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-line">// built by <b>Shivansh Pareek</b> — last updated 2026</span>
+    <span class="footer-line">&lt;/&gt; view source on <a href="https://github.com/shivzz-creator" target="_blank" rel="noopener" style="color:var(--blue)">github.com/shivzz-creator</a></span>
+  </footer>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<script>
+  // Scroll-reveal for sections (respects prefers-reduced-motion via CSS above)
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
 
+</body>
 </html>

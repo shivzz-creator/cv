@@ -2,527 +2,460 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivansh Pareek - Certifications</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivansh Pareek — Achievements</title>
+<meta name="description" content="Certifications and achievements — Shivansh Pareek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-raised:#10151c;
+    --surface:#161b22;
+    --surface-hover:#1c2128;
+    --border:#30363d;
+    --border-soft:#21262d;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --faint:#5b6673;
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #f8f9fa;
-        }
+    --blue:#58a6ff;
+    --orange:#ffa657;
+    --purple:#d2a8ff;
+    --green:#7ee787;
+    --red:#ff7b72;
 
-        .navbar-dark .navbar-nav .nav-link {
-            color: #f8f9fa;
-            transition: color 0.3s ease;
-        }
+    --mono:'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --sans:'Inter', -apple-system, 'Segoe UI', sans-serif;
+  }
 
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: #4da8ff;
-        }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
 
-        .section-title {
-            font-weight: bold;
-            margin-top: 80px;
-            margin-bottom: 30px;
-            color: #ffffff;
-            text-align: center;
-        }
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(88,166,255,0.06), transparent 40%),
+      radial-gradient(circle at 90% 60%, rgba(210,168,255,0.05), transparent 45%);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        .featurette-divider {
-            margin: 5rem 0;
-        }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:rgba(88,166,255,0.35); color:#fff; }
 
-        .lead {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:var(--border); border-radius:6px; }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--faint); }
 
-        img {
-            border-radius: 10px;
-            max-width: 100%;
-            height: auto;
-        }
+  /* ---------- top chrome bar (same system as projects.html) ---------- */
+  .chrome-bar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(13,17,23,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .chrome-top{
+    display:flex; align-items:center; gap:14px;
+    padding:10px 24px; max-width:1180px; margin:0 auto;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .dots{ display:flex; gap:7px; flex-shrink:0; }
+  .dot{ width:11px; height:11px; border-radius:50%; }
+  .dot.r{ background:#ff5f57; }
+  .dot.y{ background:#febc2e; }
+  .dot.g{ background:#28c840; }
+  .chrome-path{ font-family:var(--mono); font-size:12.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .chrome-path b{ color:var(--text); font-weight:600; }
 
-        .container {
-            padding-top: 120px;
-        }
+  .tabbar{ display:flex; max-width:1180px; margin:0 auto; padding:0 24px; gap:2px; overflow-x:auto; }
+  .tab{
+    display:flex; align-items:center; gap:8px;
+    padding:11px 18px; font-family:var(--mono); font-size:13px; font-weight:500;
+    color:var(--muted); border-bottom:2px solid transparent; white-space:nowrap;
+    transition:color .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .tab i{ font-size:12px; }
+  .tab:hover{ color:var(--text); background:var(--surface-hover); }
+  .tab.active{ color:var(--purple); border-bottom-color:var(--purple); background:var(--surface); }
 
-        .featurette-heading {
-            margin-bottom: 20px;
-        }
+  .shell{ max-width:980px; margin:0 auto; padding:0 24px; }
 
-        a {
-            color: #4da8ff;
-        }
+  /* ---------- hero ---------- */
+  .hero{ padding:154px 0 50px; }
+  .terminal{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:30px 34px;
+  }
+  .term-line{ font-family:var(--mono); font-size:14.5px; color:var(--muted); margin-bottom:6px; }
+  .term-line .prompt{ color:var(--purple); margin-right:8px; }
+  .term-line .cmd{ color:var(--text); }
 
-        a:hover {
-            color: #80c4ff;
-        }
-    </style>
+  .hero-title{
+    font-family:var(--mono); font-weight:800;
+    font-size:clamp(26px, 3.6vw, 38px); color:var(--text);
+    margin:12px 0 10px; letter-spacing:-0.01em;
+  }
+  .hero-sub{ color:var(--muted); font-size:15.5px; max-width:640px; margin:0 0 22px; }
+  .hero-sub .hl{ color:var(--blue); font-weight:600; }
+  .hero-sub .hl2{ color:var(--purple); font-weight:600; }
+  .hero-sub .hl3{ color:var(--green); font-weight:600; }
+
+  .legend{ display:flex; gap:18px; flex-wrap:wrap; padding-top:20px; margin-top:20px; border-top:1px solid var(--border-soft); }
+  .legend-item{ display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .legend-dot{ width:9px; height:9px; border-radius:50%; }
+
+  /* ---------- commit log ---------- */
+  .log{ padding:20px 0 80px; position:relative; }
+  .log::before{
+    content:'';
+    position:absolute; left:19px; top:6px; bottom:40px;
+    width:1px; background:var(--border);
+  }
+
+  .commit{ position:relative; padding-left:52px; margin-bottom:42px; }
+  .commit-node{
+    position:absolute; left:12px; top:4px;
+    width:15px; height:15px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--blue);
+    box-shadow:0 0 0 4px var(--bg);
+  }
+
+  .commit-meta{
+    font-family:var(--mono); font-size:12px; color:var(--faint);
+    display:flex; flex-wrap:wrap; gap:14px; margin-bottom:10px;
+  }
+  .commit-meta span b{ color:var(--muted); font-weight:500; }
+  .commit-hash{ color:var(--blue); }
+
+  .commit-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    overflow:hidden; display:grid; grid-template-columns:1fr 220px;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .commit-card:hover{ border-color:var(--faint); transform:translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,0.32); }
+
+  .commit-body{ padding:22px 24px; }
+  .commit-title{ font-size:17px; font-weight:700; color:var(--text); margin:0 0 4px; }
+  .commit-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .tag{
+    font-family:var(--mono); font-size:10.5px; padding:3px 8px; border-radius:5px;
+    border:1px solid var(--border-soft); background:var(--bg-raised); color:var(--muted);
+  }
+  .commit-text{ font-size:13.8px; color:var(--muted); margin:0 0 10px; }
+  .commit-text:last-of-type{ margin-bottom:0; }
+  .commit-text b{ color:var(--text); font-weight:600; }
+  .commit-list{ margin:0 0 8px; padding-left:18px; color:var(--muted); font-size:13.5px; }
+  .commit-list li{ margin-bottom:4px; }
+
+  .credential-link{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    margin-top:8px; transition:gap .15s ease;
+  }
+  .credential-link:hover{ gap:10px; }
+
+  .commit-media{
+    position:relative; background:#000;
+    display:flex; align-items:center; justify-content:center;
+    border-left:1px solid var(--border-soft);
+    overflow:hidden;
+  }
+  .commit-media img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:saturate(0.92) brightness(0.94);
+    transition:transform .4s ease, filter .3s ease;
+  }
+  .commit-media:hover img{ transform:scale(1.07); filter:saturate(1.02) brightness(1); }
+  .commit-media::after{
+    content:'\f065';
+    font-family:'FontAwesome';
+    position:absolute; bottom:8px; right:10px;
+    font-size:12px; color:rgba(255,255,255,0.85);
+    background:rgba(0,0,0,0.45); padding:5px 7px; border-radius:5px;
+    pointer-events:none;
+  }
+
+  @media (max-width:640px){
+    .commit-card{ grid-template-columns:1fr; }
+    .commit-media{ border-left:none; border-top:1px solid var(--border-soft); aspect-ratio:16/9; }
+    .log::before{ left:13px; }
+    .commit{ padding-left:38px; }
+    .commit-node{ left:6px; }
+  }
+
+  /* ---------- footer ---------- */
+  .footer{
+    margin-top:10px; padding:34px 0 60px; border-top:1px solid var(--border-soft);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  .footer-line{ font-family:var(--mono); font-size:12.5px; color:var(--faint); }
+  .footer-line b{ color:var(--muted); }
+
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+
+  a:focus-visible, .tab:focus-visible{ outline:2px solid var(--blue); outline-offset:2px; border-radius:4px; }
+</style>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Shivansh Pareek</a>
+<div class="chrome-bar">
+  <div class="chrome-top">
+    <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+    <div class="chrome-path"><b>shivansh-pareek</b> — achievements.html</div>
+  </div>
+  <nav class="tabbar">
+    <a class="tab" href="index.html"><i class="fa fa-home"></i>home.html</a>
+    <a class="tab" href="project.html"><i class="fa fa-code"></i>projects.html</a>
+    <a class="tab active" href="cert.html"><i class="fa fa-trophy"></i>achievements.html</a>
+    <a class="tab" href="contactme.html"><i class="fa fa-envelope-o"></i>contact.html</a>
+  </nav>
+</div>
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div class="shell">
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="navbar-list">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <b>HOME</b> <i class="fa fa-home"></i>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="project.html">
-                        <b>PROJECTS</b> <i class="fa fa-cog"></i>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="cert.html">
-                        <b>ACHIEVEMENTS</b> <i class="fa fa-book"></i>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contactme.html">
-                        <b>CONTACT ME</b> <i class="fa fa-phone"></i>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="terminal">
+      <div class="term-line"><span class="prompt">$</span><span class="cmd">git log --stat --author="Shivansh Pareek"</span></div>
+      <h1 class="hero-title">Achievements &amp; Certifications</h1>
+      <p class="hero-sub">
+        A running log of <span class="hl">Samsung recognitions</span>, <span class="hl2">professional certifications</span>, and <span class="hl3">completed coursework</span> — each entry links back to the original credential.
+      </p>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span>Samsung</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--orange)"></span>Cloud &amp; Platform</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Internship</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--purple)"></span>Coursera</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span>Self-Taught</div>
+      </div>
     </div>
-</nav>
+  </section>
 
+  <!-- COMMIT LOG -->
+  <section class="log">
 
-<div class="container">
-
-    <h1 class="section-title">Certificates & Achievements</h1>
-
-
-    <!-- IBM Containers & Kubernetes Essentials -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Containers & Kubernetes Essentials
-            </h2>
-
-            <p class="lead">
-                Excited to share that I have completed the
-                <b>Containers & Kubernetes Essentials</b> certification from
-                <a href="https://www.ibm.com/" target="_blank">
-                    <b>IBM</b>
-                </a>
-                and earned the corresponding badge. 🚀
-            </p>
-
-            <p class="lead">
-                The course provided a solid introduction to containers,
-                Docker, Kubernetes, and OpenShift, along with hands-on lab
-                sessions that helped reinforce the concepts through practical
-                exercises.
-            </p>
-
-            <p class="lead">
-                It was a great opportunity to strengthen my understanding of
-                containerized applications and cloud-native technologies.
-                Looking forward to applying these learnings in future projects
-                and continuing the journey of learning.
-            </p>
+    <!-- IBM Containers & Kubernetes -->
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--orange)"></div>
+      <div class="commit-meta"><span class="commit-hash">#a1c4e02</span><span><b>Issuer:</b> IBM</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Containers &amp; Kubernetes Essentials</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--orange)">IBM</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">OpenShift</span></div>
+          <p class="commit-text">Completed the <b>Containers &amp; Kubernetes Essentials</b> certification from IBM and earned the corresponding badge.</p>
+          <p class="commit-text">The course covered containers, Docker, Kubernetes, and OpenShift, reinforced through hands-on lab exercises — strengthening my grasp of containerized applications and cloud-native design.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="ibm-cert-dk.png" target="_blank">
-                <img src="ibm-cert-dk.png"
-                     alt="IBM Containers and Kubernetes Essentials Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="ibm-cert-dk.png" target="_blank" rel="noopener"><img src="ibm-cert-dk.png" alt="IBM Containers and Kubernetes Essentials Certificate"></a>
+      </div>
     </div>
 
-
-    <hr class="featurette-divider">
-
-
-    <!-- Samsung Enterprise Software Team - November 2024 -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Samsung Enterprise Software Team Recognition
-            </h2>
-
-            <p class="lead">
-                Received a <b>Samsung Certificate of Achievement</b> for my
-                valuable contribution to the Enterprise Software Team in
-                November 2024.
-            </p>
-
-            <p class="lead">
-                Recognized for my contribution and efforts toward the team's
-                engineering initiatives.
-            </p>
+    <!-- Samsung Nov 2024 -->
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--blue)"></div>
+      <div class="commit-meta"><span class="commit-hash">#7f28d19</span><span><b>Date:</b> Nov 2024</span><span><b>Issuer:</b> Samsung Electronics</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Samsung Enterprise Software Team Recognition</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--blue)">Samsung</span><span class="tag">Recognition</span></div>
+          <p class="commit-text">Received a <b>Samsung Certificate of Achievement</b> for valuable contribution to the Enterprise Software Team in November 2024.</p>
+          <p class="commit-text">Recognized for contribution and effort toward the team's engineering initiatives.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="samsung-cert-nov.png" target="_blank">
-                <img src="samsung-cert-nov.png"
-                     alt="Samsung Certificate of Achievement - November 2024">
-            </a>
-        </div>
-
+        <a class="commit-media" href="samsung-cert-nov.png" target="_blank" rel="noopener"><img src="samsung-cert-nov.png" alt="Samsung Certificate of Achievement - November 2024"></a>
+      </div>
     </div>
 
-
-    <hr class="featurette-divider">
-
-
-    <!-- Samsung Above & Beyond - January 2025 -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Samsung Above & Beyond Recognition
-            </h2>
-
-            <p class="lead">
-                Recognized for successfully fulfilling all requirements of the
-                <b>Open Lab Project: Vxt Template Generation</b> and demonstrating
-                exceptional dedication as an AI Mentor for the team.
-            </p>
-
-            <p class="lead">
-                This recognition reflects my contribution to AI-focused
-                initiatives and my efforts to support and guide the team.
-            </p>
+    <!-- Samsung Above & Beyond Jan 2025 -->
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--blue)"></div>
+      <div class="commit-meta"><span class="commit-hash">#3bd9a44</span><span><b>Date:</b> Jan 2025</span><span><b>Issuer:</b> Samsung Electronics</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Samsung Above &amp; Beyond Recognition</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--blue)">Samsung</span><span class="tag">AI Mentor</span><span class="tag">Recognition</span></div>
+          <p class="commit-text">Recognized for fulfilling all requirements of the <b>Open Lab Project: Vxt Template Generation</b> and for exceptional dedication as an AI Mentor for the team.</p>
+          <p class="commit-text">Reflects contribution to AI-focused initiatives and effort spent supporting and guiding the team.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="samsung-reko-card.png" target="_blank">
-                <img src="samsung-reko-card.png"
-                     alt="Samsung Above and Beyond Recognition">
-            </a>
-        </div>
-
+        <a class="commit-media" href="samsung-reko-card.png" target="_blank" rel="noopener"><img src="samsung-reko-card.png" alt="Samsung Above and Beyond Recognition"></a>
+      </div>
     </div>
 
-
-    <hr class="featurette-divider">
-
-
-    <!-- Samsung Enterprise Software Team - March 2025 -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Samsung Enterprise Software Team Appreciation
-            </h2>
-
-            <p class="lead">
-                Received a <b>Samsung Certificate of Appreciation</b> for my
-                valuable contribution to the Enterprise Software Team in
-                March 2025.
-            </p>
-
-            <p class="lead">
-                Acknowledged for my continued contributions and dedication
-                toward the team's engineering efforts.
-            </p>
+    <!-- Samsung Mar 2025 -->
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--blue)"></div>
+      <div class="commit-meta"><span class="commit-hash">#9e0c771</span><span><b>Date:</b> Mar 2025</span><span><b>Issuer:</b> Samsung Electronics</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Samsung Enterprise Software Team Appreciation</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--blue)">Samsung</span><span class="tag">Recognition</span></div>
+          <p class="commit-text">Received a <b>Samsung Certificate of Appreciation</b> for valuable contribution to the Enterprise Software Team in March 2025.</p>
+          <p class="commit-text">Acknowledged for continued contribution and dedication toward the team's engineering efforts.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="samsung-cert-mar.png" target="_blank">
-                <img src="samsung-cert-mar.png"
-                     alt="Samsung Certificate of Appreciation - March 2025">
-            </a>
-        </div>
-
+        <a class="commit-media" href="samsung-cert-mar.png" target="_blank" rel="noopener"><img src="samsung-cert-mar.png" alt="Samsung Certificate of Appreciation - March 2025"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Samsung SWCProf -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Samsung SWCProf Certification
-            </h2>
-
-            <p class="lead">
-                Achieved Samsung SWCProf Certification, ranking in the top 30%
-                of problem-solving engineers globally at Samsung. Recognized
-                for excellence in algorithmic thinking and optimized coding
-                practices.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--blue)"></div>
+      <div class="commit-meta"><span class="commit-hash">#41ff8ab</span><span><b>Issuer:</b> Samsung Electronics</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Samsung SWCProf Certification</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--blue)">Samsung</span><span class="tag">Algorithms</span><span class="tag">Problem Solving</span></div>
+          <p class="commit-text">Achieved Samsung SWCProf Certification, ranking in the <b>top 30% of problem-solving engineers globally</b> at Samsung.</p>
+          <p class="commit-text">Recognized for excellence in algorithmic thinking and optimized coding practices.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="samsung_cert.png" target="_blank">
-                <img src="samsung_cert.png"
-                     alt="Samsung SWCProf Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="samsung_cert.png" target="_blank" rel="noopener"><img src="samsung_cert.png" alt="Samsung SWCProf Certificate"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Generative AI Level 2 -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Generative AI Level 2
-            </h2>
-
-            <p class="lead">
-                Certified master of Agentic AI, RAG (Retrieval Augmented
-                Generation), Vector Databases, and LangChain frameworks.
-                Demonstrated proficiency in developing advanced AI solutions
-                at Samsung.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--blue)"></div>
+      <div class="commit-meta"><span class="commit-hash">#c520fe6</span><span><b>Issuer:</b> Samsung Electronics</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Generative AI Level 2</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--blue)">Samsung</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Vector DBs</span></div>
+          <p class="commit-text">Certified in Agentic AI, RAG (Retrieval-Augmented Generation), vector databases, and LangChain frameworks.</p>
+          <p class="commit-text">Demonstrated proficiency developing advanced AI solutions at Samsung.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="gl2.png" target="_blank">
-                <img src="gl2.png"
-                     alt="Generative AI Level 2 Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="gl2.png" target="_blank" rel="noopener"><img src="gl2.png" alt="Generative AI Level 2 Certificate"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Pepcoding Internship -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Pepcoding Internship Certificate
-            </h2>
-
-            <p class="lead">
-                Completed backend development internship at Pepcoding,
-                contributing to the NADOS platform. Gained practical
-                experience in RESTful API development and cloud deployments.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--green)"></div>
+      <div class="commit-meta"><span class="commit-hash">#0d84b1a</span><span><b>Issuer:</b> Pepcoding</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Pepcoding Internship Certificate</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--green)">Internship</span><span class="tag">REST APIs</span><span class="tag">Cloud Deployment</span></div>
+          <p class="commit-text">Completed a backend development internship at Pepcoding, contributing to the NADOS platform.</p>
+          <p class="commit-text">Gained practical experience in RESTful API development and cloud deployments.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="ppc.png" target="_blank">
-                <img src="ppc.png"
-                     alt="Pepcoding Internship Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="ppc.png" target="_blank" rel="noopener"><img src="ppc.png" alt="Pepcoding Internship Certificate"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Ashman Foundation -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Ashman Foundation Internship
-            </h2>
-
-            <p class="lead">
-                Successfully completed an event management internship at
-                Ashman Foundation, contributing to organizing and executing
-                youth-focused workshops and events.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--green)"></div>
+      <div class="commit-meta"><span class="commit-hash">#6a3f0dc</span><span><b>Issuer:</b> Ashman Foundation</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Ashman Foundation Internship</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--green)">Internship</span><span class="tag">Event Management</span></div>
+          <p class="commit-text">Completed an event management internship at Ashman Foundation, contributing to organizing and executing youth-focused workshops and events.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="itC.jpg" target="_blank">
-                <img src="itC.jpg"
-                     alt="Ashman Foundation Internship">
-            </a>
-        </div>
-
+        <a class="commit-media" href="itC.jpg" target="_blank" rel="noopener"><img src="itC.jpg" alt="Ashman Foundation Internship"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Python for Data Science -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Python for Data Science, AI & Development
-            </h2>
-
-            <p class="lead">
-                <a href="https://coursera.org/share/1f00944e9ea3f0f056f00a72b42b8082"
-                   target="_blank">
-                    Link for credential
-                </a>
-            </p>
-
-            <ul class="lead">
-                <li>
-                    Explained Python basics including types, expressions, and variables.
-                </li>
-
-                <li>
-                    Worked with Python data structures including Lists, Tuples,
-                    Dictionaries, and Sets.
-                </li>
-
-                <li>
-                    Applied Python programming using branching, loops,
-                    functions, objects, and classes.
-                </li>
-
-                <li>
-                    Worked with data using Pandas and NumPy libraries.
-                </li>
-            </ul>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--purple)"></div>
+      <div class="commit-meta"><span class="commit-hash">#e219a67</span><span><b>Issuer:</b> Coursera / IBM</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Python for Data Science, AI &amp; Development</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--purple)">Coursera</span><span class="tag">Pandas</span><span class="tag">NumPy</span></div>
+          <ul class="commit-list">
+            <li>Explained Python basics including types, expressions, and variables.</li>
+            <li>Worked with Python data structures — Lists, Tuples, Dictionaries, and Sets.</li>
+            <li>Applied branching, loops, functions, objects, and classes.</li>
+            <li>Worked with data using the Pandas and NumPy libraries.</li>
+          </ul>
+          <a class="credential-link" style="color:var(--purple)" href="https://coursera.org/share/1f00944e9ea3f0f056f00a72b42b8082" target="_blank" rel="noopener">Link for credential <span>→</span></a>
         </div>
-
-        <div class="col-md-5">
-            <a href="c1.jpg" target="_blank">
-                <img src="c1.jpg"
-                     alt="Python for Data Science Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="c1.jpg" target="_blank" rel="noopener"><img src="c1.jpg" alt="Python for Data Science Certificate"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Web Development -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Web Development Course
-            </h2>
-
-            <p class="lead">
-                During lockdown, I had plenty of free time, so I learned web
-                development with instructor Mr. Rob Percival and built
-                multiple projects throughout the course.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--red)"></div>
+      <div class="commit-meta"><span class="commit-hash">#f7482b3</span><span><b>Issuer:</b> Self-Taught</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Web Development Course</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--red)">Self-Taught</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
+          <p class="commit-text">During lockdown, used the free time to learn web development under instructor Rob Percival, building multiple projects throughout the course.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="web_d_cert.png" target="_blank">
-                <img src="web_d_cert.png"
-                     alt="Web Development Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="web_d_cert.png" target="_blank" rel="noopener"><img src="web_d_cert.png" alt="Web Development Certificate"></a>
+      </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Tools for Data Science -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Tools for Data Science
-            </h2>
-
-            <p class="lead">
-                <a href="https://coursera.org/share/81492bd1b0be23d59ac6b9abd8f86b22"
-                   target="_blank">
-                    Link for credential
-                </a>
-            </p>
-
-            <ul class="lead">
-                <li>
-                    Described the languages, tools, and data used by data
-                    scientists, including IBM tools focused on data science.
-                </li>
-
-                <li>
-                    Created and managed source code for data science projects
-                    using GitHub.
-                </li>
-            </ul>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--purple)"></div>
+      <div class="commit-meta"><span class="commit-hash">#2c910ee</span><span><b>Issuer:</b> Coursera / IBM</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Tools for Data Science</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--purple)">Coursera</span><span class="tag">GitHub</span></div>
+          <ul class="commit-list">
+            <li>Described the languages, tools, and data used by data scientists, including IBM's data science toolset.</li>
+            <li>Created and managed source code for data science projects using GitHub.</li>
+          </ul>
+          <a class="credential-link" style="color:var(--purple)" href="https://coursera.org/share/81492bd1b0be23d59ac6b9abd8f86b22" target="_blank" rel="noopener">Link for credential <span>→</span></a>
         </div>
-
-        <div class="col-md-5">
-            <a href="CERTIFICATE_LANDING_PAGE_ZZJQT5ZY2N9L.jpg" target="_blank">
-                <img src="CERTIFICATE_LANDING_PAGE_ZZJQT5ZY2N9L.jpg"
-                     alt="Tools for Data Science Certificate">
-            </a>
+        <a class="commit-media" href="CERTIFICATE_LANDING_PAGE_ZZJQT5ZY2N9L.jpg" target="_blank" rel="noopener"><img src="CERTIFICATE_LANDING_PAGE_ZZJQT5ZY2N9L.jpg" alt="Tools for Data Science Certificate"></a>
         </div>
-
     </div>
-
-
-    <hr class="featurette-divider">
-
 
     <!-- Python Programming -->
-    <div class="row featurette">
-
-        <div class="col-md-7">
-            <h2 class="featurette-heading">
-                Python Programming Course
-            </h2>
-
-            <p class="lead">
-                In 2019, Python was introduced to us in college, which
-                motivated me to learn it further through this course.
-                I strengthened my Python fundamentals through hands-on
-                practice and continued building my programming skills.
-            </p>
+    <div class="commit reveal">
+      <div class="commit-node" style="border-color:var(--red)"></div>
+      <div class="commit-meta"><span class="commit-hash">#84bb1f0</span><span><b>Issuer:</b> Self-Taught</span></div>
+      <div class="commit-card">
+        <div class="commit-body">
+          <h3 class="commit-title">Python Programming Course</h3>
+          <div class="commit-tags"><span class="tag" style="color:var(--red)">Self-Taught</span><span class="tag">Python</span></div>
+          <p class="commit-text">Python was first introduced in college in 2019, which motivated further study through this course — strengthening fundamentals through hands-on practice.</p>
         </div>
-
-        <div class="col-md-5">
-            <a href="pyt_cr_cert.png" target="_blank">
-                <img src="pyt_cr_cert.png"
-                     alt="Python Programming Certificate">
-            </a>
-        </div>
-
+        <a class="commit-media" href="pyt_cr_cert.png" target="_blank" rel="noopener"><img src="pyt_cr_cert.png" alt="Python Programming Certificate"></a>
+      </div>
     </div>
+
+  </section>
+
+  <footer class="footer">
+    <span class="footer-line">// built by <b>Shivansh Pareek</b> — last updated 2026</span>
+    <span class="footer-line">&lt;/&gt; view source on <a href="https://github.com/shivzz-creator" target="_blank" rel="noopener" style="color:var(--blue)">github.com/shivzz-creator</a></span>
+  </footer>
 
 </div>
 
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
